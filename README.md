@@ -6,6 +6,8 @@ To install, do a github clone in your theme directory, add a line to functions.p
 
 ## 1. Firebase Authentication Settings
 
+https://console.firebase.google.com/
+
 - A) Create Your Firebase Project
 - B) Firebase console -> Project Settings -> Service Account -> create new secret key -> download your xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json(IMPORTANT)
 - C) Firebase console -> Authentication -> Sign-in method -> Add Your Domain
@@ -18,11 +20,14 @@ To install, do a github clone in your theme directory, add a line to functions.p
 
 ## 3. Stripe Setting
 
+https://dashboard.stripe.com/
+
 - A) Login your Stripe Account
 - B) create new account -> put your account name etc..
 - C) stripe home -> dashbord -> developper -> API Key
 - D) Copy your public key (key will be start alphabet from "pk_test_xxx")(IMPORTANT)
 - E) Copy your secret key (key will be start alphabet from "sk_test_xxx")(IMPORTANT)
+- F) Create subscriptions and Pricing(IMPORTANT(
 
 ## 4. install gRPC on your PHP as module
 
@@ -78,6 +83,8 @@ $ git clone https://github.com/kmusiclife/WPFPX.git
 ```
 
 ## 7. Firebase Project setting infomation
+
+https://console.firebase.google.com/
 
 - A) Firebase console -> settings -> General -> My App -> WEB(</>) -> Add your nickname -> to console
 - B) Firebase console -> settings -> General -> My App -> </> -> npm
@@ -147,6 +154,7 @@ include('WPFPX/init.php');
 
 Access below URL
 http://yourhostname/login/
+http://yourhostname/payment/
 
-You can check your login page of Firebase Authentication.
-
+You can check your login page of Firebase Authentication and Stripe Subscription.
+You could not fins subscription plan, you should back to read to "3->F" section
