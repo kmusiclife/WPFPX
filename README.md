@@ -4,28 +4,27 @@ Implemented authentication by firebase and subscription by stripe in WordPress. 
 
 To install, do a github clone in your theme directory, add a line to functions.php, save firebase and stripe API information in webpack/.env, and add Install composer in the directory where WordPress is installed and install the firebase and stripe libraries from composer.
 
-## Installation
-### 1. Firebase Authentication Settings
+## 1. Firebase Authentication Settings
 
-A) Create Your Firebase Project
-B) Firebase console -> Project Settings -> Service Account -> create new secret key -> download your xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json(IMPORTANT)
-C) Firebase console -> Authentication -> Sign-in method -> Add Your Domain
-D) Firebase console -> Authentication -> Sign-in method -> Login Provider enabled that you need(Mail/Password, Google is my fun)
+-A) Create Your Firebase Project
+-B) Firebase console -> Project Settings -> Service Account -> create new secret key -> download your xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json(IMPORTANT)
+-C) Firebase console -> Authentication -> Sign-in method -> Add Your Domain
+-D) Firebase console -> Authentication -> Sign-in method -> Login Provider enabled that you need(Mail/Password, Google is my fun)
 
-### 2. Firebase Firestore Database Setting
+## 2. Firebase Firestore Database Setting
 
-A) create your database ( prod or dev ? depend on your environment )
-B) Firestore Database -> rule
+-A) create your database ( prod or dev ? depend on your environment )
+-B) Firestore Database -> rule
 
-### 3. Stripe Setting
+## 3. Stripe Setting
 
-A) Login your Stripe Account
-B) create new account -> put your account name etc..
-C) stripe home -> dashbord -> developper -> API Key
-D) Copy your public key (key will be start alphabet from "pk_test_xxx")(IMPORTANT)
-E) Copy your secret key (key will be start alphabet from "sk_test_xxx")(IMPORTANT)
+-A) Login your Stripe Account
+-B) create new account -> put your account name etc..
+-C) stripe home -> dashbord -> developper -> API Key
+-D) Copy your public key (key will be start alphabet from "pk_test_xxx")(IMPORTANT)
+-E) Copy your secret key (key will be start alphabet from "sk_test_xxx")(IMPORTANT)
 
-### 4. install gRPC on your PHP as module
+## 4. install gRPC on your PHP as module
 
 First of all, you need to install Google grpc. You can find more details below link.
 
@@ -50,7 +49,7 @@ $ php -i | grep "grpc support"
 
 "grpc support => enabled" = GJ.
 
-### 5. install grpc/composer on your server and copy "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json"
+## 5. install grpc/composer on your server and copy "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json"
 
 Initialize the composer in the same path where WordPress is installed.
 
@@ -71,17 +70,17 @@ $ mv xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json adminsdk.json # IMPORTANT
 DO NOT FOR GET RENAME "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json" to "adminsdk.json"
 
 
-### 6. clone WPFPX on your theme directory
+## 6. clone WPFPX on your theme directory
 
 ```sh
 $ cd wordpress/wp-content/themes/twentytwentyone
 $ git clone https://github.com/kmusiclife/WPFPX.git
 ```
 
-### 7. Firebase Project setting infomation
+## 7. Firebase Project setting infomation
 
-A) Firebase console -> settings -> General -> My App -> WEB(</>) -> Add your nickname -> to console
-B) Firebase console -> settings -> General -> My App -> </> -> npm
+-A) Firebase console -> settings -> General -> My App -> WEB(</>) -> Add your nickname -> to console
+-B) Firebase console -> settings -> General -> My App -> </> -> npm
 
 you can find below 
 
@@ -105,7 +104,7 @@ $ cp .env.dist .env
 $ vim .env
 ```
 
-edit your .env file as .env file format
+edit your `.env` file as .env file format
 
 ```
 apiKey="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -123,7 +122,7 @@ stripePublicKey = Stripe Public API Key
 eg.) pk_xxxxxxxxxxxxxxxxxx
 You got it at section "3. Stripe Setting"
 
-# 8. npm initialize
+## 8. npm initialize
 
 ```
 $ cd wordpress/wp-content/themes/twentytwentyone/WPFPX/webpack
@@ -131,7 +130,7 @@ $ npm i
 $ npm run build
 ```
 
-### 9. edit functions.php of your theme
+## 9. edit functions.php of your theme
 
 ```sh
 $ cd wordpress/wp-content/themes/twentytwentyone
@@ -144,7 +143,7 @@ bellow content add to functions.php
 include('WPFPX/init.php');
 ```
 
-### 10. check WPFPX
+## 10. check WPFPX
 
 Access below URL
 http://yourhostname/login/
