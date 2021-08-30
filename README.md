@@ -153,8 +153,8 @@ include('WPFPX/init.php');
 ## 10. check WPFPX
 
 Access below URL
-[http://yourhostname/login/][http://yourhostname/login/]
-[http://yourhostname/payment/][http://yourhostname/payment/]
+[http://yourhostname/login/][Login Page]
+[http://yourhostname/payment/][Subscription Payment Page]
 
 You can check your login page of Firebase Authentication and Stripe Subscription.
 You could not fins subscription plan, you should back to read to "3->F" section
