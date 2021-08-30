@@ -9,7 +9,7 @@ To install, do a github clone in your theme directory, add a line to functions.p
 https://console.firebase.google.com/
 
 - A) Create Your Firebase Project
-- B) Firebase console -> Project Settings -> Service Account -> create new secret key -> download your xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json(IMPORTANT)
+- B) Firebase console -> Project Settings -> Service Account -> create new secret key -> download your xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json ***IMPORTANT***
 - C) Firebase console -> Authentication -> Sign-in method -> Add Your Domain
 - D) Firebase console -> Authentication -> Sign-in method -> Login Provider enabled that you need(Mail/Password, Google is my fun)
 
@@ -25,9 +25,9 @@ https://dashboard.stripe.com/
 - A) Login your Stripe Account
 - B) create new account -> put your account name etc..
 - C) stripe home -> dashbord -> developper -> API Key
-- D) Copy your public key (key will be start alphabet from "pk_test_xxx")(IMPORTANT)
-- E) Copy your secret key (key will be start alphabet from "sk_test_xxx")(IMPORTANT)
-- F) Create subscriptions and Pricing(IMPORTANT(
+- D) Copy your public key (key will be start alphabet from "pk_test_xxx")***IMPORTANT***
+- E) Copy your secret key (key will be start alphabet from "sk_test_xxx")***IMPORTANT***
+- F) Create subscriptions and Pricing ***IMPORTANT***
 
 ## 4. install gRPC on your PHP as module
 
@@ -69,10 +69,10 @@ and then copy xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json file to composer direct
 ```
 $ cp xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json composer
 $ cd composer
-$ mv xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json adminsdk.json # IMPORTANT
+$ mv xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json adminsdk.json # <-IMPORTANT
 ```
 
-DO NOT FOR GET RENAME "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json" to "adminsdk.json"
+***DO NOT FOR GET RENAME*** "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json" to "adminsdk.json"
 
 
 ## 6. clone WPFPX on your theme directory
@@ -153,8 +153,8 @@ include('WPFPX/init.php');
 ## 10. check WPFPX
 
 Access below URL
-http://yourhostname/login/
-http://yourhostname/payment/
+[http://yourhostname/login/][http://yourhostname/login/]
+[http://yourhostname/payment/][http://yourhostname/payment/]
 
 You can check your login page of Firebase Authentication and Stripe Subscription.
 You could not fins subscription plan, you should back to read to "3->F" section
