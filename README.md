@@ -4,7 +4,7 @@ Implemented authentication by firebase and subscription by stripe in WordPress. 
 
 To install, do a github clone in your theme directory, add a line to functions.php, save firebase and stripe API information in webpack/.env, and add Install composer in the directory where WordPress is installed and install the firebase and stripe libraries from composer.
 
-## 1. Firebase Authentication Settings
+## 1. Firebase Authentication Setting
 
 https://console.firebase.google.com/
 
@@ -25,8 +25,8 @@ https://dashboard.stripe.com/
 - A) Login your Stripe Account
 - B) create new account -> put your account name etc..
 - C) stripe home -> dashbord -> developper -> API Key
-- D) Copy your public key (key will be start alphabet from "pk_test_xxx")***IMPORTANT***
-- E) Copy your secret key (key will be start alphabet from "sk_test_xxx")***IMPORTANT***
+- D) Copy your public key (key will be start alphabet from "pk_test_xxx") ***IMPORTANT***
+- E) Copy your secret key (key will be start alphabet from "sk_test_xxx") ***IMPORTANT***
 - F) Create subscriptions and Pricing ***IMPORTANT***
 
 ## 4. install gRPC on your PHP as module
@@ -69,10 +69,10 @@ and then copy xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json file to composer direct
 ```
 $ cp xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json composer
 $ cd composer
-$ mv xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json adminsdk.json # <-IMPORTANT
+$ mv xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json adminsdk.json # IMPORTANT
 ```
 
-***DO NOT FOR GET RENAME*** "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json" to "adminsdk.json"
+***DO NOT FORGET RENAME*** "xxxxxxxxx-firebase-adminsdk-xxxxxxxxx.json" to "adminsdk.json"
 
 
 ## 6. clone WPFPX on your theme directory
