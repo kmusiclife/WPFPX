@@ -21,7 +21,7 @@ class WPFPLogin extends WPFPRouter
     public function execute()
     {
         if( preg_match('/^\/login\/_____firebase_____verifyIdToken/', $this->uri) ){
-            $this->fireplateLoginVerifyIdToken('/login?success');
+            $this->loginVerifyIdToken(WPFP_LOGIN_SUCCESS_REDIRECT_URI);
         }
         if( preg_match('/^\/login\//', $this->uri) ){
             add_action( 'template_redirect', function(){
@@ -29,14 +29,30 @@ class WPFPLogin extends WPFPRouter
             } );
         }
     }
-    private function fireplateLoginVerifyIdToken($successRedirectUrl='/login')
-    {
-
+    private function loginVerifyIdToken($successRedirectUrl='/login')
+    {  
+        $request_token = isset($_GET['request_token']) ? htmlspecialchars($_GET['request_token']) : null;
+        if(!$this->getToken() or !$request_token){
+            $this->echoJson( array(
+                'success' => false,
+                'message' => 'No Access Token',
+                'user' => null,
+                'redirect_url' => home_url('/error/login?code=NoAccessToken')
+            ));            
+        }
+        if($this->getToken() != $request_token){
+            $this->echoJson( array(
+                'success' => false,
+                'message' => 'Tokens Mismatch',
+                'user' => null,
+                'redirect_url' => home_url('/error/login?code=TokenError')
+            ));            
+        }
         $_headers = getallheaders();
         if(!isset($_headers['Authorization'])){
             $this->echoJson( array(
                 'success' => false,
-                'message' => 'Fatal Error',
+                'message' => 'Authentication Information does not exist',
                 'user' => null,
                 'redirect_url' => home_url('/error/login?code=AuthorizationNone')
             ));
@@ -65,6 +81,7 @@ class WPFPLogin extends WPFPRouter
         $uid = $verifiedIdToken->claims()->get('sub');
         $loaded_user = $this->loadFirebasePayment( $auth->getUser($uid) ); // payment parameter loading
         
+        $this->clearToken();
         $this->echoJson(array(
             'success' => true,
             'message' => null,

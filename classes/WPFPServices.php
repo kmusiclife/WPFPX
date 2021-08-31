@@ -4,12 +4,13 @@ require ABSPATH.'../composer/vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Firebase\Auth\Token\Exception\InvalidToken;
 
-class WPFPServices extends WPFP
+class WPFPServices extends WPFPToken
 {    
     var $stripe;
     var $factory;
     var $user;
     var $session_id;
+    var $request_token;
     
     //
     // Service Instances
