@@ -2,7 +2,6 @@
 
 class WPFPLogin extends WPFPRouter
 {
-    
     public function init()
     {
         $this->servicesInit();
@@ -20,6 +19,7 @@ class WPFPLogin extends WPFPRouter
     }
     public function execute()
     {
+
         if( preg_match('/^\/login\/_____firebase_____verifyIdToken/', $this->uri) ){
             $this->loginVerifyIdToken(WPFP_LOGIN_SUCCESS_REDIRECT_URI);
         }

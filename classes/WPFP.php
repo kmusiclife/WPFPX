@@ -2,6 +2,10 @@
 
 class WPFP
 {
+    var $uri;
+    function __construct() {
+        $this->uri = $_SERVER['REQUEST_URI'];
+    }
     public function echoJson($variables){
         header("Content-Type: application/json; charset=utf-8");
         die( json_encode($variables) );
